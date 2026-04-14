@@ -35,5 +35,3 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
-
-config.py
