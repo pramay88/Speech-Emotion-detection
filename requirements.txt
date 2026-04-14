@@ -1,0 +1,11 @@
+librosa==0.10.1
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.4.2
+tensorflow==2.16.1
+matplotlib==3.8.4
+seaborn==0.13.2
+tqdm==4.66.4
+soundfile==0.12.1
+gradio==4.31.5
+requests==2.31.0

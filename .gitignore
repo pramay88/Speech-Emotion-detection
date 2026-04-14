@@ -1,0 +1,36 @@
+/public
+public/
+
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Data (large + not needed in repo)
+data/
+*.npy
+*.wav
+*.csv
+
+# Models (very important to ignore)
+models/
+*.h5
+*.keras
+*.pt
+*.pkl
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
