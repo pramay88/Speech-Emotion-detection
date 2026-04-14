@@ -54,12 +54,19 @@ def pad_or_truncate(arr, max_len):
 def augment(y, sr):
     """Return list of (possibly augmented) signals: original + 2 augmentations."""
     variants = [y]
-    # Time stretch (±10%)
-    rate = np.random.choice([0.9, 1.1])
-    variants.append(librosa.effects.time_stretch(y, rate=rate))
-    # Add Gaussian noise
+
+    # Time stretch
+    for rate in [0.8, 1.2]:
+        variants.append(librosa.effects.time_stretch(y, rate=rate))
+
+    # Pitch shift
+    for n_steps in [-2, 2]:
+        variants.append(librosa.effects.pitch_shift(y, sr=sr, n_steps=n_steps))
+
+    # Noise
     noise = 0.005 * np.random.randn(len(y))
     variants.append(y + noise)
+
     return variants
 
 

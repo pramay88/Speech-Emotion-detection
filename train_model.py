@@ -25,6 +25,8 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers, models, callbacks, regularizers
 
+from config import MODEL_PATH, SCALER_PATH
+
 # ── Config 
 FEATURE_DIR = "data/features"
 MODEL_DIR   = "models"

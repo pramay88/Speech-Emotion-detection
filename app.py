@@ -87,15 +87,23 @@ def analyze(audio_input):
 
         # --- chart ---
         fig, ax = plt.subplots(figsize=(6, 3.5))
-        fig.patch.set_facecolor("#1a1a1a")
-        ax.set_facecolor("#1a1a1a")
+
+        # Light background
+        fig.patch.set_facecolor("#ffffff")   # outer background (white)
+        ax.set_facecolor("#f7f7f7")          # slightly soft gray for plot area
 
         labels = sorted(all_probs.keys())
         values = [all_probs[l] * 100 for l in labels]
         bar_colors = [COLORS[l] for l in labels]
 
         ax.barh(labels, values, color=bar_colors)
-        ax.set_title("Emotion probabilities")
+
+        # Improve readability on light theme
+        ax.set_title("Emotion probabilities", color="#333333")
+        ax.tick_params(colors="#333333")
+
+        # Optional: subtle grid
+        ax.grid(axis="x", color="#dddddd", linestyle="--", linewidth=0.5)
 
         return label, fig
 
